@@ -20,7 +20,7 @@ steps:
   - name: deploy
     image: appleboy/drone-scp
     commands:
-      - /bin/sh echo '123';
+      - echo '123';
     when:
       status:
         - success
