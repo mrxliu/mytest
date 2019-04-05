@@ -1,10 +1,53 @@
 ---
 kind: pipeline
-name: default
+name: drone
+
+workspace:
+  base: /app
+  path: git/drone
 
 steps:
-- name: build
-  image: golang
-  commands:
-  - go test
-  - go build
+  - name: build
+    image: golang:1.12
+    volumes:
+      - name: webroot
+        path: /data/go
+    commands:
+      - go build
+    environment:
+      host:
+        from_secret: 127.0.0.1
+      port:
+        from_secret: 22
+      abc: abctest
+  - name: deploy
+    image: appleboy/drone-scp
+    when:
+      status:
+        - success
+    settings:
+      host:
+        from_secret: 127.0.0.1
+      port:
+        from_secret: 22
+      key:
+        from_secret: rsa
+      username:
+        from_secret: wuhou
+      target:
+        from_secret: deploy_path
+      source: ./*
+
+volumes:
+  - name: webroot
+    host:
+      path: /opt
+  - name: cache
+    host:
+      path: /tmp/cache
+
+trigger:
+  branch:
+    - master
+  event:
+    - push
