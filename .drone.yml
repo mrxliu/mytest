@@ -9,9 +9,6 @@ workspace:
 steps:
   - name: build
     image: golang:1.12
-    volumes:
-      - name: webroot
-        path: /data/go
     commands:
       - go build
     environment:
@@ -37,14 +34,6 @@ steps:
       target:
         from_secret: deploy_path
       source: ./*
-
-volumes:
-  - name: webroot
-    host:
-      path: /opt
-  - name: cache
-    host:
-      path: /tmp/cache
 
 trigger:
   branch:
