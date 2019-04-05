@@ -32,7 +32,7 @@ steps:
       username:
         from_secret: wuhou
       target:
-        from_secret: deploy_path
+        from_secret: /data/go
       source: ./*
 
 trigger:
