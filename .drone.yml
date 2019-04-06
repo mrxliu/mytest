@@ -28,16 +28,11 @@ steps:
       status:
         - success
     settings:
-      host:
-        from_secret: 172.18.140.140
-      port:
-        from_secret: 22
-      key:
-        from_secret: rsa
-      username:
-        from_secret: wuhou
-      target:
-        from_secret: /data/go
+      host: 172.18.140.140
+      port: 22
+      key: rsa
+      username: wuhou
+      target: /data/go
       source: ./*
 
 volumes:
