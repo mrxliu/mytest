@@ -23,7 +23,8 @@ steps:
       status:
         - success
     volumes:
-      - /data/go/id_rsa:/data/go/id_rsa
+      - name: go_id_rsa
+        path: /data/go/id_rsa
     commands:
       - ls /data
     settings:
@@ -39,6 +40,9 @@ volumes:
   - name: cache
     host:
       path: /tmp/cache
+  - name: go_id_rsa
+    host:
+      path: /data/go/id_rsa
 
 trigger:
   branch:
