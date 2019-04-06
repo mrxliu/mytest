@@ -21,6 +21,7 @@ steps:
       port:
         from_secret: 22
       abc: abctest
+
   - name: deploy
     image: appleboy/drone-scp
     when:
@@ -28,7 +29,7 @@ steps:
         - success
     settings:
       host:
-        from_secret: 127.0.0.1
+        from_secret: 172.18.140.140
       port:
         from_secret: 22
       key:
