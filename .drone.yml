@@ -22,6 +22,8 @@ steps:
     when:
       status:
         - success
+      branch:
+        - master
     volumes:
       - name: go_id_rsa
         path: /data/go/id_rsa
