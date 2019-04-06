@@ -28,9 +28,6 @@ steps:
       status:
         - success
     settings:
-      ssh_key:
-        - source: deploy_key
-          target: scp_key
       host: 
         - 172.18.140.140
       port: 22
