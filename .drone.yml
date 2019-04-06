@@ -4,8 +4,8 @@ name: drone
 
 
 workspace:
-  base: /app
-  path: git/drone
+  base: /data/build/go
+  path: github.com/mytest
 
 steps:
   - name: build
@@ -14,13 +14,12 @@ steps:
     - name: cache
       path: /tmp/cache
     commands:
-      - go build
+      - go build -o mytest
     environment:
       host:
         from_secret: 127.0.0.1
       port:
         from_secret: 22
-      abc: abctest
 
   - name: deploy
     image: appleboy/drone-scp
@@ -32,12 +31,11 @@ steps:
         - 172.18.140.140
       port: 22
       key_path: /data/go/id_rsa
-      #ssh_key:
-      #  - from_secret: deploy_key
       username: wuhou
       target:
         - /data/go
-    source: ./*
+      source:
+        - /tmp/cache/
 
 volumes:
   - name: cache
