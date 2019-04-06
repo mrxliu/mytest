@@ -22,16 +22,13 @@ steps:
     when:
       status:
         - success
-    settings:
-      host: 
-        - 172.18.140.140
-      port: 22
-      key_path: /data/go/id_rsa
-      username: wuhou
-      target:
-        - /data/go
-      source:
-        - /tmp/cache/
+    host: 172.18.140.140
+    username: wuhou
+    key_path: /data/go/id_rsa
+    target:
+      - /data/go
+    source:
+      - mytest
 
 volumes:
   - name: cache
