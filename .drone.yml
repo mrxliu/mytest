@@ -15,6 +15,7 @@ steps:
     #  path: /tmp/cache
     commands:
       - go build -o mytest
+      - pwd
 
   - name: deploy
     image: appleboy/drone-scp
