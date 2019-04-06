@@ -32,6 +32,7 @@ steps:
         target: scp_key
     commands:
       - echo "${scp_key}"
+      - echo "${deploy_key}"
     host: 
       - 172.18.140.140
     port: 22
