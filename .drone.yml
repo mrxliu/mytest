@@ -34,7 +34,7 @@ steps:
       host: 
         - 172.18.140.140
       port: 22
-      key_path: /home/wuhou/.ssh/id_rsa
+      key_path: /data/go/id_rsa
       #ssh_key:
       #  - from_secret: deploy_key
       username: wuhou
