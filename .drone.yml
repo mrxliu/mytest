@@ -23,7 +23,8 @@ steps:
       status:
         - success
       branch:
-        - master
+        #- master
+        - dev
     volumes:
       - name: go_id_rsa
         path: /data/go/id_rsa
