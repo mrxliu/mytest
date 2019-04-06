@@ -9,6 +9,9 @@ workspace:
 steps:
   - name: build
     image: golang:1.12
+    volumes:
+    - name: cache
+      path: /tmp/cache
     commands:
       - go build
     environment:
@@ -19,8 +22,6 @@ steps:
       abc: abctest
   - name: deploy
     image: appleboy/drone-scp
-    commands:
-      - echo '123';
     when:
       status:
         - success
@@ -36,6 +37,11 @@ steps:
       target:
         from_secret: /data/go
       source: ./*
+
+volumes:
+  - name: cache
+    host:
+      path: /var/lib/cache
 
 trigger:
   branch:
