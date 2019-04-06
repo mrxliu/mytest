@@ -10,16 +10,11 @@ workspace:
 steps:
   - name: build
     image: golang:1.12
-    volumes:
-    - name: cache
-      path: /tmp/cache
+    #volumes:
+    #- name: cache
+    #  path: /tmp/cache
     commands:
       - go build -o mytest
-    environment:
-      host:
-        from_secret: 127.0.0.1
-      port:
-        from_secret: 22
 
   - name: deploy
     image: appleboy/drone-scp
