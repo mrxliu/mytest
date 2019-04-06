@@ -22,13 +22,14 @@ steps:
     when:
       status:
         - success
-    host: 172.18.140.140
-    username: wuhou
-    key_path: /data/go/id_rsa
-    target:
-      - /data/go
-    source:
-      - mytest
+    settings:
+      host: 172.18.140.140
+      username: wuhou
+      key_path: /data/go/id_rsa
+      target:
+        - /data/go
+      source:
+        - mytest
 
 volumes:
   - name: cache
