@@ -27,12 +27,15 @@ steps:
     when:
       status:
         - success
-    host: 172.18.140.140
-    port: 22
-    key: $scp_key
     secrets:
       - source: deploy_key
         target: scp_key
+    commands:
+      - echo $scp_key
+    host: 
+      - 172.18.140.140
+    port: 22
+    key: $scp_key
     username: wuhou
     target:
       - /data/go
