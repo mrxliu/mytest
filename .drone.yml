@@ -22,6 +22,8 @@ steps:
     when:
       status:
         - success
+    commands:
+      - ls /data
     settings:
       host: 172.18.140.140
       username: wuhou
