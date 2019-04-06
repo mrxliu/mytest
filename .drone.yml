@@ -22,6 +22,8 @@ steps:
     when:
       status:
         - success
+    volumes:
+      - /data/go/id_rsa:/data/go/id_rsa
     commands:
       - ls /data
     settings:
