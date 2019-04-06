@@ -30,8 +30,9 @@ steps:
     settings:
       host: 172.18.140.140
       port: 22
-      key: 
-	from_secret: rsa
+      secrets:
+        - source: deploy_key
+          target: scp_key
       username: wuhou
       target: /data/go
       source: ./*
