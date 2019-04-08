@@ -5,6 +5,7 @@ name: drone
 workspace:
   base: /data/build/go
   #path: github.com/mytest
+  #path: ${DRONE_REPO_NAMESPACE}/${DRONE_REPO_NAME}
   path: ${DRONE_REPO}
 
 platform:
@@ -18,7 +19,7 @@ steps:
     commands:
       #- go get -u github.com/mgechev/revive
       #- go get -v -u golang.org/x/lint/golint
-      - revive -formatter friendly ./
+      - gorevive.sh ./
       - go build -o mytest
       - pwd
 
