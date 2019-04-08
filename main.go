@@ -4,8 +4,8 @@ import "fmt"
 
 // Hello 您好
 func Hello() {
-	userID := 1
-	fmt.Println(userID)
+	userId := 1
+	fmt.Println(userId)
 }
 
 func main() {
