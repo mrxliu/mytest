@@ -4,7 +4,8 @@ name: drone
 
 workspace:
   base: /data/build/go
-  path: github.com/mytest
+  #path: github.com/mytest
+  path: ${DRONE_REPO}
 
 platform:
   os: linux
