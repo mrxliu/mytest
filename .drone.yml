@@ -17,6 +17,7 @@ steps:
     commands:
       #- go get -u github.com/mgechev/revive
       #- go get -v -u golang.org/x/lint/golint
+      - revive -formatter friendly ./
       - go build -o mytest
       - pwd
 
