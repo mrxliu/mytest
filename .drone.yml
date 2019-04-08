@@ -15,7 +15,8 @@ steps:
     image: golang:1.12
     commands:
       #- go get -u github.com/mgechev/revive
-      - go get -v -u golang.org/x/lint/golint
+      #- go get -v -u golang.org/x/lint/golint
+      - go get -v -u github.com/alecthomas/gometalinter
       - go build -o mytest
       - pwd
 
