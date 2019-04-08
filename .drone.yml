@@ -2,10 +2,13 @@
 kind: pipeline
 name: drone
 
-
 workspace:
   base: /data/build/go
   path: github.com/mytest
+
+platform:
+  os: linux
+  arch: amd64
 
 steps:
   - name: build
@@ -23,15 +26,15 @@ steps:
       status:
         - success
       branch:
-        #- master
-        - dev
+        - master
+        #- dev
     volumes:
       - name: go_id_rsa
-        path: /data/go/id_rsa
+        path: /data/go/id_rsa1
     settings:
       host: 172.18.140.140
       username: wuhou
-      key_path: /data/go/id_rsa
+      key_path: /data/go/id_rsa1
       target:
         - /data/go
       source:
