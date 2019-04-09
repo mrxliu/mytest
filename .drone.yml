@@ -13,6 +13,13 @@ platform:
   arch: amd64
 
 steps:
+  - name: before notify
+    image: lddsb/drone-dingtalk-message
+    settings:
+      token: a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
+      type: markdown
+      sha_link: true
+
   - name: build
     #image: golang:1.12
     image: yongsean/go1.12-revive
