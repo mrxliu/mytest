@@ -45,9 +45,9 @@ steps:
 
   - name: notify
     image: yongsean/drone-dingding
-#    image: lddsb/drone-dingtalk-message
+#   image: lddsb/drone-dingtalk-message
     settings:
-      DING_DING_WEBHOOK_URL: https://oapi.dingtalk.com/robot/send?access_token=a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
+      webhook: https://oapi.dingtalk.com/robot/send?access_token=a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
       #token: a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
       #type: markdown
       #sha_link: true
