@@ -28,7 +28,6 @@ steps:
       token:
         from_secret: DING_TOKEN
       #token: a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
-      #token: ${DING_TOKEN}
 
   - name: deploy
     image: appleboy/drone-scp
@@ -42,7 +41,7 @@ steps:
       - name: go_id_rsa
         path: /data/go/id_rsa1
     settings:
-      host: 172.18.140.140
+      host: [ 172.18.140.140 ]
       username: wuhou
       key_path: /data/go/id_rsa1
       target:
