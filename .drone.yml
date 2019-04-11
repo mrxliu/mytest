@@ -23,6 +23,17 @@ steps:
       - go build -o mytest
       - pwd
 
+  - name: notify
+    image: yongsean/drone-dingding
+#   image: lddsb/drone-dingtalk-message
+    settings:
+      WEBHOOK: a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
+      #token: a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
+      #type: markdown
+      #sha_link: true
+      #message_color: true
+      #message_pic: true
+
   - name: deploy
     image: appleboy/drone-scp
     when:
@@ -44,16 +55,6 @@ steps:
         - mytest
 
 
-  - name: notify
-    image: yongsean/drone-dingding
-#   image: lddsb/drone-dingtalk-message
-    settings:
-      WEBHOOK: a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
-      #token: a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
-      #type: markdown
-      #sha_link: true
-      #message_color: true
-      #message_pic: true
 
 
 volumes:
