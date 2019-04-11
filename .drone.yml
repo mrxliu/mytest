@@ -14,11 +14,8 @@ platform:
 
 steps:
   - name: build
-    #image: golang:1.12
     image: yongsean/go1.12-revive
     commands:
-      #- go get -u github.com/mgechev/revive
-      #- go get -v -u golang.org/x/lint/golint
       - gorevive.sh ./
       - go build -o mytest
       - pwd
@@ -29,7 +26,7 @@ steps:
       status: [success, failure]
 #   image: lddsb/drone-dingtalk-message
     settings:
-      WEBHOOK: a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
+      token: a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
       #token: a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
       #type: markdown
       #sha_link: true
@@ -52,7 +49,7 @@ steps:
       username: wuhou
       key_path: /data/go/id_rsa1
       target:
-        - /data/go
+        - /data/go/${DRONE_REPO_NAME}
       source:
         - mytest
 
