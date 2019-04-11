@@ -25,6 +25,8 @@ steps:
 
   - name: notify
     image: yongsean/drone-dingding
+    when:
+      status: [success, failure]
 #   image: lddsb/drone-dingtalk-message
     settings:
       WEBHOOK: a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
