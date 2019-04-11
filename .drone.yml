@@ -24,10 +24,11 @@ steps:
     image: yongsean/drone-dingding
     when:
       status: [success, failure]
-    secrets: [ DING_TOKEN ]
     settings:
+      token:
+        from_secret: DING_TOKEN
       #token: a382c5d4e4dadee305d400f5edaeeb2807f179f4e40009f2c114d8ab19b368d3
-      token: ${DING_TOKEN}
+      #token: ${DING_TOKEN}
 
   - name: deploy
     image: appleboy/drone-scp
