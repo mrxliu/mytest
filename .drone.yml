@@ -41,7 +41,8 @@ steps:
       - name: go_id_rsa
         path: /data/go/id_rsa1
     settings:
-      host: [ 172.18.140.140 ]
+      host: 
+        from_secret: [ MASTER_HOST1 ]
       username:
         from_secret: SSH_USER
       key_path: /data/go/id_rsa1
