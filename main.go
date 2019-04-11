@@ -6,6 +6,7 @@ import "fmt"
 func Hello() {
 	userId := 1
 	fmt.Println(userId)
+
 }
 
 func main() {
