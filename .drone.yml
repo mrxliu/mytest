@@ -42,7 +42,8 @@ steps:
         path: /data/go/id_rsa1
     settings:
       host: [ 172.18.140.140 ]
-      username: wuhou
+      username:
+        from_secret: SSH_USER
       key_path: /data/go/id_rsa1
       target:
         - /data/go/${DRONE_REPO_NAME}
