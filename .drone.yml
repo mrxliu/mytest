@@ -42,7 +42,7 @@ steps:
         path: /data/go/id_rsa1
     settings:
       host: 
-        - from_secret: MASTER_HOST1
+        from_secret: MASTER_HOST1
       username:
         from_secret: SSH_USER
       key_path: /data/go/id_rsa1
