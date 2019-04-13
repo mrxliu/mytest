@@ -3,7 +3,7 @@ name: default
 
 steps:
 - name: apply ansible playbook
-  image: plugins/ansible:1
+  image: plugins/ansible
   become: true
   become_method: su
   become_user: wuhou
