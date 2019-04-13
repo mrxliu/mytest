@@ -2,25 +2,25 @@ kind: pipeline
 name: default
 
 steps:
-- name: apply ansible playbook
-  image: plugins/ansible
-  become: true
-  become_method: su
-  become_user: wuhou
-  list_hosts: true
-  list_tasks: true
-  environment:
-    another_var: foo
-  settings:
-    playbook: ansible/playbook.yml
-    galaxy: ansible/requirements.yml
-    inventory: ansible/inventory
-    private_key:
-      from_secret: ansible_private_key
-  when:
-    event:
-    - push
-    - tag
+  - name: apply ansible playbook
+    image: plugins/ansible:1
+    become: true
+    become_method: su
+    become_user: wuhou
+    list_hosts: true
+    list_tasks: true
+    environment:
+      another_var: foo
+    settings:
+      playbook: ansible/playbook.yml
+      galaxy: ansible/requirements.yml
+      inventory: ansible/inventory
+      private_key:
+        from_secret: ansible_private_key
+    when:
+      event:
+      - push
+      - tag
 
 ---
 kind: secret
