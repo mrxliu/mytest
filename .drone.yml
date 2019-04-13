@@ -51,6 +51,15 @@ steps:
       source:
         - mytest
 
+  - name: notify1
+    image: yongsean/drone-dingding
+    when:
+      status: [success, failure]
+    settings:
+      token:
+        from_secret: DING_TOKEN
+ 
+
 volumes:
   - name: cache
     host:
