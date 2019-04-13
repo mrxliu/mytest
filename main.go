@@ -9,5 +9,6 @@ func Hello() {
 }
 
 func main() {
+	fmt.Sprintf(`ABC %d`, `123`)
 	fmt.Println("Hello test world")
 }
