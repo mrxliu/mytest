@@ -16,6 +16,7 @@ steps:
   - name: build
     image: yongsean/go1.12-revive
     commands:
+      - go vet ./...
       - gorevive.sh ./
       - go build -o mytest
       - pwd
