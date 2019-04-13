@@ -56,6 +56,7 @@ steps:
     when:
       status: [success, failure]
     settings:
+      flow: deploy
       token:
         from_secret: DING_TOKEN
  
