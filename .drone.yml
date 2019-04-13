@@ -13,13 +13,16 @@ platform:
   arch: amd64
 
 steps:
-  - name: build
+  - name: vet
     image: yongsean/go1.12-revive
     commands:
       - go vet ./...
+    
+  - name: build
+    image: yongsean/go1.12-revive
+    commands:
       - gorevive.sh ./
       - go build -o mytest
-      - pwd
 
   - name: notify
     image: yongsean/drone-dingding
